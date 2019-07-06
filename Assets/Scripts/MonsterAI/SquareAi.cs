@@ -13,7 +13,6 @@ public class SquareAi : MonoBehaviour
     private float SqaceSpeed;//移动速度
     private bool StatusOfAttacked;
     private GameObject player;//玩家，没获取下面要获取
-
     void Start()
     {
         Monster = this.gameObject;
@@ -68,6 +67,7 @@ public class SquareAi : MonoBehaviour
     }
     /// <summary>
     /// 人接近时怪物的反应
+    /// 吸收时调用
     /// </summary>
     public void AIreaction()
     {
@@ -76,9 +76,9 @@ public class SquareAi : MonoBehaviour
             if ((Monster.transform.position - player.transform.position).sqrMagnitude < 2)
             {
                 Debug.Log("1");
-                StatusOfAttacked = false;
-                RandNumber = 3;
-                SqaceSpeed = 2.0f;
+                StatusOfAttacked = false;//全部停止
+                RandNumber = 3;//全部停止
+                SqaceSpeed = 2.0f;//全部停止
                 AIGoQuickly();
             }
             else
@@ -106,11 +106,23 @@ public class SquareAi : MonoBehaviour
         }
     }
     /// <summary>
-    /// 方块怪被打
+    /// 方块怪被吸
+    /// 吸收时调用赋值
     /// </summary>
-    private void AIBehurt()
+    public void AIBeSuck(bool keep)
     {
+        if (keep = true)
+        {
+            StatusOfAttacked = false;//全部停止
+            RandNumber = 3;//全部停止
+            SqaceSpeed = 2.0f;//全部停止
+        }
+        else
+        {
+            StatusOfAttacked = true;
+            SqaceSpeed = 1.2f;
 
+        }
     }
     /// <summary>
     /// 计时携程
@@ -124,7 +136,7 @@ public class SquareAi : MonoBehaviour
             {
                 RandomStatus();
             }
-            yield return new WaitForSeconds(SqaceSpeed);
+            yield return new WaitForSeconds(1.2f);
         }
     }
     void Update()
