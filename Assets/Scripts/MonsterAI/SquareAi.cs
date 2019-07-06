@@ -23,7 +23,8 @@ public class SquareAi : MonoBehaviour
         StartCoroutine(Timer());
         StatusOfAttacked = true;
         SqaceSpeed = 1.2f;
-        player = GameObject.Find("player");
+        player = GameObject.FindWithTag("Player");
+        Monster.tag = "Square";
     }
     /// <summary>
     /// 怪物巡逻与超范围停止

@@ -23,8 +23,9 @@ public class TriangleAi : MonoBehaviour {
         StartCoroutine(Timer());
         StatusOfAttacked = true;
         SqaceSpeed = 1.2f;
-        player = GameObject.Find("player");
+        player = GameObject.FindWithTag("Player");
         TriangleRigidbody.bodyType = RigidbodyType2D.Kinematic;
+        Triangle.tag = "Triangle";
     }
     /// <summary>
     /// 怪物巡逻与超范围停止

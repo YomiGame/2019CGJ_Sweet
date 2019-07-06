@@ -13,9 +13,10 @@ public class HeartStatic : MonoBehaviour {
     private float EndMoveOffest;//结束偏移量
     void Start () {
         HeartTransform = transform;
-        player = GameObject.Find("player").transform;
-        GameObject ReBullect = Resources.Load("Prefabs/bullect", typeof(GameObject)) as GameObject;
+        player = GameObject.FindWithTag("Player").transform;
+        GameObject ReBullect = Resources.Load("Prefabs/bullect", typeof(GameObject)) as GameObject;//获取子弹预制体
         Bullect = Instantiate(ReBullect, new Vector2(-100, -100), Quaternion.identity) as GameObject;
+        HeartTransform.tag = "Heart";
     }
     /// <summary>
     /// 判断左右玩家在心形怪左还是右边
