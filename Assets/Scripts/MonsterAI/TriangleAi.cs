@@ -9,7 +9,7 @@ public class TriangleAi : MonoBehaviour {
     private Vector2 HighTouch;
     private int RandNumber;//移动方向1左2右边
     private Vector2 StaticVector2;
-    private float SqaceSpeed;//移动速度
+    public float SqaceSpeed;//移动速度
     private bool StatusOfAttacked;
     public GameObject player;//玩家，没获取下面要获取
     private Animator T_Animator;
@@ -27,6 +27,8 @@ public class TriangleAi : MonoBehaviour {
         TriangleRigidbody.bodyType = RigidbodyType2D.Kinematic;
         Triangle.tag = "Triangle";
         T_Animator = Triangle.GetComponent<Animator>();
+
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Monster"), LayerMask.NameToLayer("Floor"));
     }
     /// <summary>
     /// 怪物巡逻与超范围停止
@@ -35,11 +37,11 @@ public class TriangleAi : MonoBehaviour {
     {
         if (RandNumber == 1)
         {
-            TriangleRigidbody.velocity = new Vector2(0, SqaceSpeed);
+            TriangleRigidbody.velocity = new Vector2(TriangleRigidbody.velocity.x, SqaceSpeed);
         }
         else if (RandNumber == 2)
         {
-            TriangleRigidbody.velocity = new Vector2(0, -SqaceSpeed);
+            TriangleRigidbody.velocity = new Vector2(TriangleRigidbody.velocity.x, -SqaceSpeed);
         }
         if (Triangle.transform.position.y >= HighTouch.y)
         {

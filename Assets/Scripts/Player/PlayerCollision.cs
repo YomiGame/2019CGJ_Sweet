@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    PlayerController con;
     // Start is called before the first frame update
     void Start()
     {
-        
+        con = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,11 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        if (other.transform.tag == "Triangle" || other.transform.tag == "Square" || other.transform.tag == "Heart")
+        {
+            EventManager.Instance.DispatchEvent("OnHit", null);
+        }
     }
+
 
 }

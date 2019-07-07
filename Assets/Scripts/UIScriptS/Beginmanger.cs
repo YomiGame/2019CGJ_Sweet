@@ -23,7 +23,7 @@ public class Beginmanger : MonoBehaviour {
     void Update () {
 
         timer+= Time.time;
-        if (timer > 400)
+        if (timer > 600)
         {
             timer = 0;
             TimeImage++;
@@ -56,7 +56,7 @@ public class Beginmanger : MonoBehaviour {
             BG2.transform.position = new Vector2(-200, -200);
             BG3.transform.position = new Vector2(-200, -200);
             BG4.transform.position = new Vector2(0, 0);
-        } else if(TimeImage == 4)
+        } else if(TimeImage == 5)
         {
             TimeImage = 0;
             SceneManager.LoadScene(1);

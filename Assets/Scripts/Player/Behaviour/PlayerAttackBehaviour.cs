@@ -10,5 +10,7 @@ public class PlayerAttackBehaviour : StateMachineBehaviour
         animator.gameObject.GetComponent<PlayerController>().lockAttack = false;
         animator.gameObject.GetComponent<PlayerController>().lockJump = false;
         animator.gameObject.GetComponent<PlayerController>().lockMove = false;
+
+        EventManager.Instance.DispatchEvent("OnAttackStateExit",null);
     }
 }

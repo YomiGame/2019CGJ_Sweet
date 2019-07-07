@@ -1,0 +1,33 @@
+run:
+run_0 0.2s
+run_1 0.1s
+run_2 0.2s
+run_1 0.1s
+
+idle:
+idle_0 _s
+
+jump:
+jump_0 0.2s 预备帧，蹲下准备起跳
+jump_1 _s 人物跳跃上升时
+jump_2 _s 人物跳跃下降时
+
+crouch:
+jump_0 _s 跳跃第0帧同时也是蹲下动作:)
+
+absorb:
+jump_1 _s 开始吸收时人物升起，跳跃第1帧同时也是吸收开始动作:D
+jump_2 _s 结束吸收时人物落下，跳跃第2帧同时也是吸收结束动作:P
+☆注意☆ 吸收时需要同时播放star_particle_effect粒子特效，并播放star_0持续靠近主角并变色的动画
+
+throw:
+throw_0 0.2s 预备帧，蓄力
+throw_1 0.1s 预备帧，蓄力
+throw_2 0.2s 预备帧，蓄力
+throw_3 0.1s 扔出帧，速度较快时发生的模糊帧
+throw_4 0.2s 扔出帧，结束
+
+kick:
+kick_0 0.2s 预备帧，蓄力
+kick_1 0.1s 踢出帧，速度较快时发生的模糊帧
+kick_2 0.2s 踢出帧，结束

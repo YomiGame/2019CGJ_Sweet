@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 295979759}
   - component: {fileID: 295979761}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: starEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,6 +79,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &945677204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 945677205}
+  - component: {fileID: 945677206}
+  - component: {fileID: 945677207}
+  m_Layer: 10
+  m_Name: Ab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &945677205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945677204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 155072057983868581}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945677206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945677204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d574e9a5812989a4aa25df6895e73e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RayOnOff: 0
+--- !u!61 &945677207
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945677204}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1201933117
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +161,7 @@ GameObject:
   - component: {fileID: 1201933118}
   - component: {fileID: 1201933119}
   - component: {fileID: 1201933120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: star_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +260,7 @@ GameObject:
   - component: {fileID: 155072057983868574}
   - component: {fileID: 155072057983868577}
   - component: {fileID: 172778094}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -210,6 +281,7 @@ Transform:
   - {fileID: 155072058858453537}
   - {fileID: 295979759}
   - {fileID: 1201933118}
+  - {fileID: 945677205}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -229,7 +301,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4bb54d63cb93b9f46a65d064046537c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -297,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6c299750c6be04bbba4f589113cb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpForce: 450
+  speed: 6
+  jumpForce: 600
   Hp: 100
   range: 20
   animatorList:
@@ -307,9 +379,12 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 8882d670b9cf92b448cbe0523278ac77, type: 2}
   - {fileID: 22100000, guid: 8c0bf3f56380583459f751dc54699eda, type: 2}
   onGround: 0
+  rig2D: {fileID: 0}
   lockJump: 0
   lockAttack: 0
   lockMove: 0
+  lockAbsorb: 0
+  lockTurn: 0
 --- !u!95 &172778094
 Animator:
   serializedVersion: 3
@@ -339,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155072058858453537}
   - component: {fileID: 155072058858453534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

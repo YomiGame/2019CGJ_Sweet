@@ -1,0 +1,21 @@
+idle:
+idle_0 0.2s
+idle_1 0.2s
+
+run:
+run_0 0.2s
+run_1 0.2s
+run_2 0.2s
+run_1 0.2s
+
+found:
+found_0 0.2s
+found_1 0.2s
+found_2 0.2s
+found_3 0.2s
+
+attack:
+attack_0 // 发射子弹bullet_0
+
+rest:
+rest_0
