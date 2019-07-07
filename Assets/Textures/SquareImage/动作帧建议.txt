@@ -1,0 +1,18 @@
+idle:
+normal_0
+
+found: // 发现玩家，准备攻击
+保持normal_0，显示对话框hohoho
+hohoho_0 0.2s
+hohoho_1 0.2s
+
+attack: // 冲撞攻击
+保持 normal_0 和 dash_effect_0 做水平移动
+
+rest:
+保持rest_0，显示对话框zzz
+zzz_0 0.2s
+zzz_1 0.2s
+zzz_2 0.2s
+zzz_3 0.2s
+zzz_4 0.2s

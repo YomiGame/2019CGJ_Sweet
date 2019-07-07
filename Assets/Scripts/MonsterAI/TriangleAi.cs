@@ -11,8 +11,8 @@ public class TriangleAi : MonoBehaviour {
     private Vector2 StaticVector2;
     private float SqaceSpeed;//移动速度
     private bool StatusOfAttacked;
-    private GameObject player;//玩家，没获取下面要获取
-
+    public GameObject player;//玩家，没获取下面要获取
+    private Animator T_Animator;
     void Start()
     {
         Triangle = this.gameObject;
@@ -26,6 +26,7 @@ public class TriangleAi : MonoBehaviour {
         player = GameObject.FindWithTag("Player");
         TriangleRigidbody.bodyType = RigidbodyType2D.Kinematic;
         Triangle.tag = "Triangle";
+        T_Animator = Triangle.GetComponent<Animator>();
     }
     /// <summary>
     /// 怪物巡逻与超范围停止
@@ -78,13 +79,14 @@ public class TriangleAi : MonoBehaviour {
             //RandNumber = 3;
             SqaceSpeed = 3.0f;
             AIGoQuickly();
+            T_Animator.SetBool("Near", true);
         }
         else
         {
             SqaceSpeed = 1.0f;
             //LowTouch = new Vector2(Triangle.transform.position.x - 3, Triangle.transform.position.y);//左边最远重新定义
             //HighTouch = new Vector2(Triangle.transform.position.x + 3, Triangle.transform.position.y);//右边最远重新定义
-
+            T_Animator.SetBool("Near", false);
         }
 
     }
