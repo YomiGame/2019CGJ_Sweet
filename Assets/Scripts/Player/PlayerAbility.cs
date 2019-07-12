@@ -15,6 +15,7 @@ public class PlayerAbility : MonoBehaviour
     }
     public enum Item
     {
+        Nothing = 0,
         Triangle = 1,
         HeartShaped = 2,
         Square = 3

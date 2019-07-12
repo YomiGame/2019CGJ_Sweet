@@ -53,12 +53,12 @@ public class SquareAi : MonoBehaviour
         if (Monster.transform.position.x >= RightTouch.x)
         {
             RandNumber = 2;
-            Debug.Log("3");
+            //Debug.Log("3");
         }
         else if (Monster.transform.position.x <= LeftTouch.x)
         {
             RandNumber = 1;
-            Debug.Log("4");
+            //Debug.Log("4");
         }
 
     }

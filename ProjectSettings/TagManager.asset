@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Triangle
+  - Square
+  - Heart
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -13,6 +17,11 @@ TagManager:
   - UI
   - 
   - 
+  - Floor
+  - 
+  - Player
+  - Monster
+  - Item
   - 
   - 
   - 
@@ -31,12 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Limit
   m_SortingLayers:
   - name: Default
     uniqueID: 0

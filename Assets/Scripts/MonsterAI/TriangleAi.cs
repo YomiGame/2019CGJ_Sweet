@@ -46,12 +46,12 @@ public class TriangleAi : MonoBehaviour {
         if (Triangle.transform.position.y >= HighTouch.y)
         {
             RandNumber = 2;
-            Debug.Log("3");
+            //Debug.Log("3");
         }
         else if (Triangle.transform.position.y <= LowTouch.y)
         {
             RandNumber = 1;
-            Debug.Log("4");
+            //Debug.Log("4");
         }
 
     }
